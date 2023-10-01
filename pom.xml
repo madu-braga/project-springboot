@@ -5,18 +5,22 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.9</version>
+		<version>3.1.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.app</groupId>
-	<artifactId>qatesting</artifactId>
+	<groupId>br.gov.sp.fatec</groupId>
+	<artifactId>projeto-spring-2k23</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>qatesting</name>
-	<description>Demo project for Spring Boot</description>
+	<name>projeto-spring-2k23</name>
+	<description>Estudando o projeto para passar</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+    		<groupId>com.mysql</groupId>
+    		<artifactId>mysql-connector-j</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -33,16 +37,6 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.30</version>
-			</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -55,43 +49,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.2</version>
-            	<executions>
-                    <execution>
-                    	<goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                    	<goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-            	</executions>
-        	</plugin>
 		</plugins>
 	</build>
-
-	<reporting>
-		<plugins>
-        	<plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-            	<reportSets>
-                    <reportSet>
-                        <reports>
-     	                   <!-- select non-aggregate reports -->
-                            <report>report</report>
-                        </reports>
-                    </reportSet>
-            	</reportSets>
-        	</plugin>
-		</plugins>
-	</reporting>
 
 </project>
